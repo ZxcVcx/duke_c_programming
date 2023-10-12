@@ -1,4 +1,4 @@
-Grading at Sat 07 Oct 2023 02:50:19 PM UTC
+Grading at Sat 07 Oct 2023 02:56:22 PM UTC
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -14,24 +14,24 @@ Running a simulation with 20000 draws for 2 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
 You dont seem to have the right total draws.
-Yours sum to 0 but I expected 20000
+Yours sum to 170 but I expected 20000
 Running a simulation with 25000 draws for 3 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
 Could not find the win percent in your output
 You dont seem to have the right total draws.
-Yours sum to 0 but I expected 25000
+Yours sum to 86 but I expected 25000
 Running a simulation with 25000 draws for 3 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
 Could not find the win percent in your output
 You dont seem to have the right total draws.
-Yours sum to 0 but I expected 25000
+Yours sum to 84 but I expected 25000
 Running a simulation with 25000 draws for 2 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
 You dont seem to have the right total draws.
-Yours sum to 0 but I expected 25000
+Yours sum to 2420 but I expected 25000
 Running a simulation with 80000 draws for 4 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
@@ -49,7 +49,7 @@ Running a simulation with 30000 draws for 2 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
 You dont seem to have the right total draws.
-Yours sum to 0 but I expected 30000
+Yours sum to 14 but I expected 30000
 Running a simulation with 40000 draws for 3 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
