@@ -27,7 +27,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       ptr+=3;
     }
   }
-  if (deck->n_cards < 5) {
+  if (desk->n_cards < 5) {
     free_deck(deck);
     return NULL;
   }
