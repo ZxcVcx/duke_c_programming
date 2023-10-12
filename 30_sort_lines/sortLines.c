@@ -66,6 +66,8 @@ int main(int argc, char ** argv) {
       sortData(input, count);
       print_data(input, count);
       free_input(input, count);
+      input = NULL;
+      count = 0;
       if (fclose(f) == EOF) {
 	fprintf(stderr, "Failed to close the file %s.\n", argv[i]);
 	return EXIT_FAILURE;
