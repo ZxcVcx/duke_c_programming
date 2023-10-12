@@ -5,7 +5,7 @@
 
 
 void assert_card_valid(card_t c) {
-  fprintf(stderr, "%c %c ", value_letter(c), suit_letter(c));
+  // fprintf(stderr, "%c %c ", value_letter(c), suit_letter(c));
   assert(c.value >= 2);
   assert(c.value <= VALUE_ACE);
   assert(c.suit != NUM_SUITS);
