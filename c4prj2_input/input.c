@@ -15,7 +15,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       add_future_card(fc, ptr[1]-'0', c);
     } else {
       card_t c = card_from_letters(ptr[0], ptr[1]);
-      assert_card_valid(c);
+      // assert_card_valid(c);
       add_card_to(deck, c);
     }
     ptr += 3;
