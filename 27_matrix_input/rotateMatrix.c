@@ -58,6 +58,13 @@ int main(int argc, char ** argv) {
       return EXIT_FAILURE;
     }
   }
+  int endtest = 0;
+  while((endtest=fgetc(f)) != EOF) {
+    if (endtest != '\n') {
+      fprintf(stderr, "The file is too long.\n");
+      return EXIT_FAILURE;
+    }
+  }
   rotate(matrix);
   print_matrix(matrix);
 }
