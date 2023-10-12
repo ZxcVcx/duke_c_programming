@@ -12,6 +12,7 @@ void print_result(int * wins, size_t n_hands, int trails) {
   for (size_t i = 0; i < n_hands; i++) {
     printf("Hnad %zu won %u / %u times (%.2f%%)\n", i, wins[i], trails, (double) wins[i] * 100 / (double) trails);
   }
+  printf("And there were %u ties\n", wins[n_hands]);
 }
 
 int main(int argc, char ** argv) {
