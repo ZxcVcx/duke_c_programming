@@ -10,18 +10,24 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   const char * ptr = str;
   size_t count = 0;
   while (ptr[0] != '\n' && ptr[0] != '\0') {
-    if (ptr[0] == '?') {
-      card_t * c = add_empty_card(deck);
-      add_future_card(fc, ptr[1]-'0', c);
-    } else {
-      card_t c = card_from_letters(ptr[0], ptr[1]);
-      assert_card_valid(c);
-      add_card_to(deck, c);
+    if (*ptr == ' ') {
+      ptr++;
+      continue;
     }
-    ptr += 3;
-    count++;
+    
+    if (ptr[0] == '?') {
+      int num = atoi(ptr+1);
+      add_future_card(fc, num, add_empty_card(deck));
+      while (*ptr != ' ' && *ptr != '\n' && *ptr != '\0') {
+	ptr++;
+      }
+      ptr++;
+    } else {
+      add_card_to(deck, card_from_letters(ptr[0], ptr[1]));
+      ptr+=3;
+    }
   }
-  if (count < 5) {
+  if (desk->n_cards < 5) {
     free_deck(deck);
     return NULL;
   }
