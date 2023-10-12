@@ -31,11 +31,7 @@ void shuffle(deck_t * d){
 }
 
 void assert_full_deck(deck_t * d) {
-  // for(unsigned i = 0; i < d->n_cards; i++) {
-  //  assert_card_valid(*d->cards[i]);
-  //}
   for(unsigned i = 0; i < d->n_cards; i++) {
-    // unsigned dup = 0;
     for (unsigned j = 0; j < i; j++) {
       char value = value_letter(*d->cards[j]);
       char suit = suit_letter(*d->cards[j]);
@@ -44,17 +40,47 @@ void assert_full_deck(deck_t * d) {
   }
 }
 
-deck_t * make_deck_exclude(deck_t * excluded_cards);
-
 void add_card_to(deck_t * deck, card_t c) {
-  deck->cards = realloc(deck->cards, sizeof(deck->cards) + sizeof(c));
-  deck->cards[deck->n_cards++] = c;
+  deck->cards = realloc(deck->cards, sizeof(*deck->cards)*(deck->n_cards+1));
+  *deck->cards[deck->n_cards++] = c;
 }
 
 card_t * add_empty_card(deck_t * deck) {
-  deck->cards = realloc(deck->cards, sizeof(deck->cards) + sizeof(*deck->cards));
-};
+  deck->cards = realloc(deck->cards, sizeof(*deck->cards)*(deck->n_cards+1));
+  catd_t empty_card;
+  empty_card->value=0;
+  empty_card->suit=0;
+  *deck->cards[deck->n_cards++] = empty_card;
+  return deck->cards[deck->n_cards-1];
+}
 
-void free_deck(deck_t * deck);
+deck_t * make_deck_exclude(deck_t * exclude_cards) {
+  deck_t * deck = malloc(sizeof(*deck));
+  deck->cards = NULL;
+  deck->n_cards = 0;
+  for (unsigned i = 0; i < 52; i++) {
+    card_t c = card_from_num(i);
+    if (!deck_contains(exclude_cards, c)) {
+      add_card_to(deck, c);
+    }
+  }
+}
 
-deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands);
+void free_deck(deck_t * deck) {
+  free(deck->cards);
+  free(deck);
+}
+
+deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
+  deck_t * exclude = malloc(sizeof(*exclude));
+  exclude->cards = NULL;
+  deck->n_cards = 0;
+  for (size_t i = 0; i < n_hands; i++) {
+    for (size_t j = 0; j < hands[i]->n_cards; j++) {
+      add_card_to(exclude, *hands[i]->cards[j]);
+    }
+  }
+  deck_t * remain = make_deck_exclude(exclude);
+  free_deck(exclude);
+  return remain;
+}
