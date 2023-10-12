@@ -80,4 +80,8 @@ int main(int argc, char ** argv) {
   }
   rotate(matrix);
   print_matrix(matrix);
+
+  if (fclose(f) != 0) {
+    fprintf(stderr, "Failed to close the file.\n");
+  }
 }
