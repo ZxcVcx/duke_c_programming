@@ -48,6 +48,9 @@ const char * ranking_to_string(hand_ranking_t r) {
 }
 
 char value_letter(card_t c) {
+  if (c.value < 2) {
+    return '?';
+  }
   if (c.value <= 10) {
     return '0' + c.value % 10;
   }

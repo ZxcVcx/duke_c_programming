@@ -16,7 +16,6 @@ void print_result(int * wins, size_t n_hands, int trails) {
 }
 
 int main(int argc, char ** argv) {
-  //YOUR CODE GOES HERE
   if (argc < 2) {
     fprintf(stderr, "Usage: test <input_file_name> <trials_num>\n");
     return EXIT_FAILURE;
@@ -26,7 +25,6 @@ int main(int argc, char ** argv) {
   if (argc > 2 && atoi(argv[2]) > 0) {
     num_trails = atoi(argv[2]);
   }
-  // printf("%d\n", trails);
 
   FILE * f = fopen(argv[1], "r");
   if (f == NULL) {
@@ -54,21 +52,26 @@ int main(int argc, char ** argv) {
     shuffle(remaining);
     future_cards_from_deck(remaining, fc);
 
-    int inc_array_at = 0;
-    int index = 0;
+    int maxidx = 0;
+    int tieidx = 0;
     for (int j = 1; j < n_hands; j++) {
-      int result = compare_hands(hands[index], hands[j]);
-      if (result == 0) inc_array_at = n_hands;
+      int result = compare_hands(hands[maxidx], hands[j]);
+      if (result == 0) {
+	tieidx = j;
+      }
       if (result < 0) {
-        inc_array_at = j;
-	index = j;
+	maxidx = j;
+	tieidx = j;
       }
     }
-    wins[inc_array_at]++;
+    if (maxidx == tieidx) {
+      wins[maxidx]++;
+    } else {
+      wins[n_hands]++;
+    }
   }
 
   print_result(wins, n_hands, num_trails);
-
 
   if (fclose(f) == EOF) {
     fprintf(stderr, "Failed to close input file '%s'.\n", argv[1]);
@@ -89,4 +92,3 @@ int main(int argc, char ** argv) {
   free(hands);
   return EXIT_SUCCESS;
 }
-
