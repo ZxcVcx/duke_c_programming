@@ -34,8 +34,9 @@ fc) {
   char * line = NULL;
   size_t sz = 0;
   *n_hands = 0;
-  while (getline(&line, &sz, f) > 1) { // new line will return 1       deck_t * current = hand_from_string(line, fc);
-    if (line == NULL) {
+  while (getline(&line, &sz, f) > 1) { // new line will return 1
+    deck_t * current = hand_from_string(line, fc);
+    if (current == NULL) {
       fprintf(stderr, "a poker hand has at least 5 cards in it.\n"\
 );
 
