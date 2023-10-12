@@ -39,7 +39,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
       free(line);
       return NULL;
     }
-    decks = realloc(decks, sizeof(*deck)*(*n_hand+1));
+    decks = realloc(decks, sizeof(*decks)*(*n_hands+1));
     decks[*n_hands] = current;
     (*n_hands)++;
   }
