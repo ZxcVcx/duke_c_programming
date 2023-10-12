@@ -37,6 +37,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
     deck_t * current = hand_from_string(line, fc);
     if (current == NULL) {
       fprintf(stderr, "a poker hand has at least 5 cards in it.\n");
+      fprintf(stderr, "%s\n", line);
       free(line);
       return NULL;
     }
