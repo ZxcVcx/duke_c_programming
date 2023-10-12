@@ -1,15 +1,10 @@
-Grading at Thu 05 Oct 2023 11:42:31 AM UTC
+Grading at Thu 05 Oct 2023 11:45:51 AM UTC
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 eval.c: In function ‘get_match_counts’:
 eval.c:166:18: error: expected expression before ‘{’ token
   166 |   match_counts = {0};
       |                  ^
-eval.c:173:2: error: ‘match_count’ undeclared (first use in this function); did you mean ‘match_counts’?
-  173 |  match_count[k]++;
-      |  ^~~~~~~~~~~
-      |  match_counts
-eval.c:173:2: note: each undeclared identifier is reported only once for each function it appears in
 Compilation of eval.c failed
 
 Overall Grade: F
