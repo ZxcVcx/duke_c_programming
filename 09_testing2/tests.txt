@@ -1,0 +1,14 @@
+aaaaaa aaaaa
+aaaaa aaaaaa
+!!!!! !!!!!
+abcde abcde
+0000a a0000
+00??a aa?00
+????a aa???
+???a aa???
+aaaaa aaaa
+           
+AAA+A aaaaa
+aaaaa AAA+A
+aaa+a AAA+A
+aaa a AAA+A

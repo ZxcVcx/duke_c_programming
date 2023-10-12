@@ -1,0 +1,64 @@
+Grading at Wed 06 Sep 2023 01:05:55 PM UTC
+**Testing broken implementation 10 **
+-------------------------------------
+
+The 2 power of 10 is 10
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+The 2 power of 10 is 4
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+The 1 power of 0 is 1
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+The 0 power of 10 is 0
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+The 0 power of 0 is 0
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+The 2 power of 1000 is 16960
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+The 2 power of 10 is 90
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+The 1 power of 0 is 2
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+The 1 power of 0 is 3
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+The 2 power of 10 is 20
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+The 2 power of 10 is 0
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED

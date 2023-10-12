@@ -1,0 +1,64 @@
+Grading at Thu 17 Aug 2023 03:58:16 PM UTC
+**Testing broken implementation 10 **
+-------------------------------------
+
+array1, 4
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+array2, 4
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+array3, 4
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+array4, 1
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+array3, 2
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+array4, 1
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+array2, 5
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+array3, 0
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+array1, -1
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+array1, 1
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+array5, 1
+
+**Testing correct implementation **
+-------------------------------------
+
+ok
+
+All test programs were handled correctly
+
+Overall Grade: PASSED
