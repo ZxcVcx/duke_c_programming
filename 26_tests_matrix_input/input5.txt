@@ -1,0 +1,10 @@
+abcdefghij
+b        g
+c        g
+d        g
+e  were  g
+f  adwe  g
+g  zxcv  e
+h        d
+i        c
+j        b
