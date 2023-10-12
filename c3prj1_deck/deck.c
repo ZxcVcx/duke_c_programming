@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <time.h>
 #include "deck.h"
 void print_hand(deck_t * hand){
   for(unsigned i = 0; i < hand->n_cards; i++) {
@@ -24,10 +25,10 @@ int deck_contains(deck_t * d, card_t c) {
 void shuffle(deck_t * d){
   for (unsigned i = 0; i < d->n_cards; i++) {
     // unsigned rand = i + (random() % (d->n_cards+1));
+    srandom((unsigned) time(NULL));
     unsigned rand = i + (random() % (d->n_cards - i));
-    unsigned rand2 = i + (random() % (d->n_cards - i));
-    card_t tmp = *d->cards[rand2];
-    *d->cards[rand2] = *d->cards[rand];
+    card_t tmp = *d->cards[i];
+    *d->cards[i] = *d->cards[rand];
     *d->cards[rand] = tmp;
   }
 }
