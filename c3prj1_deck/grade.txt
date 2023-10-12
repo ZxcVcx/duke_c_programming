@@ -1,17 +1,18 @@
-Grading at Wed 04 Oct 2023 08:01:34 AM UTC
+Grading at Wed 04 Oct 2023 08:04:43 AM UTC
 Compiling deck.c
-deck.c: In function ‘add_empty_card’:
-deck.c:51:13: error: invalid type argument of ‘->’ (have ‘card_t’ {aka ‘struct card_tag’})
-   51 |   empty_card->value=0;
-      |             ^~
-deck.c:52:13: error: invalid type argument of ‘->’ (have ‘card_t’ {aka ‘struct card_tag’})
-   52 |   empty_card->suit=0;
-      |             ^~
-deck.c: In function ‘make_deck_exclude’:
-deck.c:67:1: error: control reaches end of non-void function [-Werror=return-type]
-   67 | }
-      | ^
-cc1: all warnings being treated as errors
-Could not compile your deck.c!
+Compiling cards.c
+Linking cards.o deck.o deck-c4.o and the grader's .o file
+/usr/bin/ld: deck-c4.o: in function `make_deck_exclude':
+deck-c4.c:(.text+0x7f): multiple definition of `make_deck_exclude'; deck.o:deck.c:(.text+0x320): first defined here
+/usr/bin/ld: deck-c4.o: in function `add_card_to':
+deck-c4.c:(.text+0x1d0): multiple definition of `add_card_to'; deck.o:deck.c:(.text+0x290): first defined here
+/usr/bin/ld: deck-c4.o: in function `add_empty_card':
+deck-c4.c:(.text+0x29c): multiple definition of `add_empty_card'; deck.o:deck.c:(.text+0x2e0): first defined here
+/usr/bin/ld: deck-c4.o: in function `free_deck':
+deck-c4.c:(.text+0x384): multiple definition of `free_deck'; deck.o:deck.c:(.text+0x430): first defined here
+/usr/bin/ld: deck-c4.o: in function `build_remaining_deck':
+deck-c4.c:(.text+0x3fb): multiple definition of `build_remaining_deck'; deck.o:deck.c:(.text+0x450): first defined here
+collect2: error: ld returned 1 exit status
+Could not link your code!
 
 Overall Grade: FAILED
