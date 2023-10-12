@@ -48,8 +48,8 @@ void add_card_to(deck_t * deck, card_t c) {
 card_t * add_empty_card(deck_t * deck) {
   deck->cards = realloc(deck->cards, sizeof(*deck->cards)*(deck->n_cards+1));
   card_t empty_card;
-  empty_card.value=0;
-  empty_card.suit=0;
+  empty_card->value=0;
+  empty_card->suit=0;
   *deck->cards[deck->n_cards++] = empty_card;
   return deck->cards[deck->n_cards-1];
 }
@@ -64,7 +64,6 @@ deck_t * make_deck_exclude(deck_t * exclude_cards) {
       add_card_to(deck, c);
     }
   }
-  return deck;
 }
 
 void free_deck(deck_t * deck) {
