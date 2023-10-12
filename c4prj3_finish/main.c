@@ -52,6 +52,7 @@ int main(int argc, char ** argv) {
   // Monte Carlo trial
   for (size_t i = 0; i < num_trails; i++) {
     shuffle(remaining);
+    shuffle(remaining);
     future_cards_from_deck(remaining, fc);
 
     size_t maxidx = 0;
