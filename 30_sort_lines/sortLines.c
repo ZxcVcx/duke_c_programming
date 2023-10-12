@@ -51,6 +51,9 @@ int main(int argc, char ** argv) {
   size_t count = 0;
   if (argc == 1) {
     read_input(&input, &count, stdin);
+    sortData(input, count);
+    print_data(input, count);
+    free_input(input, count);
   };
   if (argc > 1) {
     for (int i = 1; i < argc; i++) {
@@ -60,15 +63,15 @@ int main(int argc, char ** argv) {
 	return EXIT_FAILURE;
       }
       read_input(&input, &count, f);
+      sortData(input, count);
+      print_data(input, count);
+      free_input(input, count);
       if (fclose(f) == EOF) {
 	fprintf(stderr, "Failed to close the file %s.\n", argv[i]);
 	return EXIT_FAILURE;
       }
     }
   }
-  sortData(input, count);
-  print_data(input, count);
-  free_input(input, count);
   
   return EXIT_SUCCESS;
 }
