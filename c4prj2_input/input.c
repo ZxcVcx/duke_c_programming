@@ -8,8 +8,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck->cards = NULL;
   deck->n_cards = 0;
   const char * ptr = str;
-  size_t count = 0;
-  while (ptr[0] != '\n' && ptr[0] != '\0') {
+
+  // a typical str: "      0s  5s    ?0  ?2 ?4  3h  ?50 \n\0"
+  while (*ptr != '\n' && *ptr != '\0') {
     if (*ptr == ' ') {
       ptr++;
       continue;
