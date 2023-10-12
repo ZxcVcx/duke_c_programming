@@ -35,8 +35,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   return deck;
 }
 
-deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * \
-fc) {
+deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
   deck_t ** deck_ts = NULL;
   char * line = NULL;
   size_t sz = 0;
@@ -44,8 +43,7 @@ fc) {
   while (getline(&line, &sz, f) > 1) { // new line will return 1
     deck_t * current = hand_from_string(line, fc);
     if (current == NULL) {
-      fprintf(stderr, "a poker hand has at least 5 cards in it.\n"\
-);
+      fprintf(stderr, "a poker hand has at least 5 cards in it.\n");
 
       free(line);
       return NULL;
