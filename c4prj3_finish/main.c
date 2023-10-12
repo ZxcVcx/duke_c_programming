@@ -10,7 +10,7 @@
 
 void print_result(int * wins, size_t n_hands, int trails) {
   for (size_t i = 0; i < n_hands; i++) {
-    printf("Hnad %zu won %u / %u times (%.2f%%)\n", i, wins[i], trails, (double) wins[i] * 100 / (double) trails);
+    printf("Hand %zu won %u / %u times (%.2f%%)\n", i, wins[i], trails, (double) wins[i] * 100 / (double) trails);
   }
   printf("And there were %u ties\n", wins[n_hands]);
 }
@@ -22,9 +22,9 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
 
-  int trails = 10000;
+  int num_trails = 10000;
   if (argc > 2 && atoi(argv[2]) > 0) {
-    trails = atoi(argv[2]);
+    num_trails = atoi(argv[2]);
   }
   // printf("%d\n", trails);
 
@@ -50,7 +50,7 @@ int main(int argc, char ** argv) {
   }
 
   // Monte Carlo trial
-  for (size_t i = 0; i < trails; i++) {
+  for (size_t i = 0; i < num_trails; i++) {
     shuffle(remaining);
     future_cards_from_deck(remaining, fc);
 
@@ -72,7 +72,7 @@ int main(int argc, char ** argv) {
     }
   }
 
-  print_result(wins, n_hands, trails);
+  print_result(wins, n_hands, num_trails);
 
 
   if (fclose(f) == EOF) {
