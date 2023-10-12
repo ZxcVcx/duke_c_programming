@@ -3,10 +3,8 @@
 #include <string.h>
 
 void read_input(char *** input, size_t * n, FILE * f) {
-  // char ** input = NULL;
   size_t sz = 0;
   char * line = NULL;
-  //size_t n = 0;
   while (getline(&line, &sz, f) >= 0) {
     *input = realloc(*input, (*n+1) * sizeof(**input));
     (*input)[*n] = line;
@@ -14,8 +12,6 @@ void read_input(char *** input, size_t * n, FILE * f) {
     (*n)++;
   }
   free(line);
-  // *in = input;
-  // *count = n;
 }
 
 void print_data(char ** input, size_t count) {
@@ -39,21 +35,32 @@ int stringOrder(const void * vp1, const void * vp2) {
   const char * const * p2 = vp2;
   return strcmp(*p1, *p2);
 }
+
 //This function will sort and print data (whose length is count).
 void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
+void sort_lines_and_print(FILE * f) {
+  char ** input = NULL;
+  size_t count = 0;
+  read_input(&input, &count, f);
+  sortData(input, count);
+  print_data(input, count);
+  free_input(input, count);
+}
+
 int main(int argc, char ** argv) {
   
   //WRITE YOUR CODE HERE!
-  char ** input = NULL;
-  size_t count = 0;
+  /* char ** input = NULL; */
+  /* size_t count = 0; */
   if (argc == 1) {
-    read_input(&input, &count, stdin);
-    sortData(input, count);
-    print_data(input, count);
-    free_input(input, count);
+    sort_lines_and_print(stdin);
+    /* read_input(&input, &count, stdin); */
+    /* sortData(input, count); */
+    /* print_data(input, count); */
+    /* free_input(input, count); */
   };
   if (argc > 1) {
     for (int i = 1; i < argc; i++) {
@@ -62,12 +69,13 @@ int main(int argc, char ** argv) {
 	fprintf(stderr, "The file %s can't be opened.\n", argv[i]);
 	return EXIT_FAILURE;
       }
-      read_input(&input, &count, f);
-      sortData(input, count);
-      print_data(input, count);
-      free_input(input, count);
-      input = NULL;
-      count = 0;
+      sort_lines_and_print(f);
+      /* read_input(&input, &count, f); */
+      /* sortData(input, count); */
+      /* print_data(input, count); */
+      /* free_input(input, count); */
+      /* input = NULL; */
+      /* count = 0; */
       if (fclose(f) == EOF) {
 	fprintf(stderr, "Failed to close the file %s.\n", argv[i]);
 	return EXIT_FAILURE;
