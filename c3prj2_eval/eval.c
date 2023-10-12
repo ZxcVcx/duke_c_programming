@@ -163,7 +163,10 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //use of get_match_counts.
 unsigned * get_match_counts(deck_t * hand) {
   unsigned * match_counts = malloc(hand->n_cards*(sizeof(*match_counts)));
-  match_counts = {0};
+  for (int i = 0; i < hand->n_cards; i++) {
+    match_counts[i] = 0;
+  }
+  
   int i = 0;
   int j = 0;
   while(j < hand->n_cards) {
