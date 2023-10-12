@@ -1,0 +1,21 @@
+Grading at Sat 07 Oct 2023 07:13:12 AM UTC
+Compiling cards.c -> cards.o
+Compiling deck.c -> deck.o
+Compiling input.c -> input.o
+input.c: In function ‘hand_from_string’:
+input.c:21:5: error: ‘n’ undeclared (first use in this function)
+   21 |     n++;
+      |     ^
+input.c:21:5: note: each undeclared identifier is reported only once for each function it appears in
+input.c: In function ‘read_input’:
+input.c:42:21: error: ‘deck’ undeclared (first use in this function); did you mean ‘decks’?
+   42 |     decks = realloc(deck, sizeof(*deck)*(*n_hand+1));
+      |                     ^~~~
+      |                     decks
+input.c:42:43: error: ‘n_hand’ undeclared (first use in this function); did you mean ‘n_hands’?
+   42 |     decks = realloc(deck, sizeof(*deck)*(*n_hand+1));
+      |                                           ^~~~~~
+      |                                           n_hands
+Compilation of input.c failed
+
+Overall Grade: F
