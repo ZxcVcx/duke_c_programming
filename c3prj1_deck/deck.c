@@ -48,6 +48,7 @@ void add_card_to(deck_t * deck, card_t c) {
 
 card_t * add_empty_card(deck_t * deck) {
   deck->cards = realloc(deck->cards, sizeof(*deck->cards)*(deck->n_cards+1));
+  deck->cards[deck->n_cards] = malloc(sizeof(**deck->cards));
   card_t empty_card;
   empty_card.value=0;
   empty_card.suit=0;
