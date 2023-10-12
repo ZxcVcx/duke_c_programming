@@ -25,8 +25,9 @@ void shuffle(deck_t * d){
   for (unsigned i = 0; i < d->n_cards; i++) {
     // unsigned rand = i + (random() % (d->n_cards+1));
     unsigned rand = i + (random() % (d->n_cards - i));
-    card_t tmp = *d->cards[i];
-    *d->cards[i] = *d->cards[rand];
+    unsigned rand2 = i + (random() % (d->n_cards - i));
+    card_t tmp = *d->cards[rand2];
+    *d->cards[rand2] = *d->cards[rand];
     *d->cards[rand] = tmp;
   }
 }
