@@ -177,8 +177,7 @@ unsigned * get_match_counts(deck_t * hand) {
       }
       j++;
       i = j;
-    }
-    if (hand->cards[j]->value == hand->cards[j+1]->value) {
+    } else {
       j++;
     }
   }

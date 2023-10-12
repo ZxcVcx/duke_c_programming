@@ -42,6 +42,7 @@ void assert_full_deck(deck_t * d) {
 
 void add_card_to(deck_t * deck, card_t c) {
   deck->cards = realloc(deck->cards, sizeof(*deck->cards)*(deck->n_cards+1));
+  deck->cards[deck->n_cards] = malloc(sizeof(**deck->cards));
   *deck->cards[deck->n_cards++] = c;
 }
 
@@ -68,6 +69,9 @@ deck_t * make_deck_exclude(deck_t * exclude_cards) {
 }
 
 void free_deck(deck_t * deck) {
+  for (int i = 0; i < deck_n_cards; i++) {
+    free(deck->cards[i]);
+  }
   free(deck->cards);
   free(deck);
 }
