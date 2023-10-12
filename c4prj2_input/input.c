@@ -15,7 +15,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       add_future_card(fc, ptr[1]-'0', c);
     } else {
       card_t c = card_from_letters(ptr[0], ptr[1]);
-      // assert_card_valid(c);
+      assert_card_valid(c);
       add_card_to(deck, c);
     }
     ptr += 3;
@@ -28,16 +28,17 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   return deck;
 }
 
-deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
+deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * \
+fc) {
   deck_t ** deck_ts = NULL;
   char * line = NULL;
   size_t sz = 0;
   *n_hands = 0;
-  while (getline(&line, &sz, f) > 1) {
-    deck_t * current = hand_from_string(line, fc);
+  while (getline(&line, &sz, f) > 1) { // new line will return 1       deck_t * current = hand_from_string(line, fc);
     if (current == NULL) {
-      fprintf(stderr, "a poker hand has at least 5 cards in it.\n");
-      fprintf(stderr, "%s\n", line);
+      fprintf(stderr, "a poker hand has at least 5 cards in it.\n"\
+);
+
       free(line);
       return NULL;
     }
