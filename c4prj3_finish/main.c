@@ -52,31 +52,19 @@ int main(int argc, char ** argv) {
   // Monte Carlo trial
   for (size_t i = 0; i < num_trails; i++) {
     shuffle(remaining);
-    shuffle(remaining);
     future_cards_from_deck(remaining, fc);
 
-    size_t maxidx = 0;
-    for (size_t j = 0; j < n_hands; j++) {
-      int result = compare_hands(hands[maxidx], hands[j]);
+    int inc_array_at = 0;
+    int index = 0;
+    for (int j = 0; j < n_hands; j++) {
+      int result = compare_hands(hands[index], hands[j]);
+      if (result == 0) inc_array_at = n_hands;
       if (result < 0) {
-        maxidx = j;
+        inc_array_at = j;
+	index = j;
       }
     }
-
-    size_t secidx = (maxidx == 0) ? 1 : 0;
-    for (size_t j = 0; j < n_hands; j++) {
-      if (j == maxidx) continue;
-      int result = compare_hands(hands[secidx], hands[j]);
-      if (result < 0) {
-	secidx = j;
-      }
-    }
-    
-    if (compare_hands(hands[maxidx], hands[secidx]) == 0) {
-      wins[n_hands]++;
-    } else {
-      wins[maxidx]++;
-    }
+    wins[inc_array_at]++;
   }
 
   print_result(wins, n_hands, num_trails);
