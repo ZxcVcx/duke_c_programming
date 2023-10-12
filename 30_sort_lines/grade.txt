@@ -1,35 +1,10 @@
-Grading at Sat 30 Sep 2023 09:52:18 AM UTC
+Grading at Sat 30 Sep 2023 10:03:55 AM UTC
 Attempting to compile sortLines.c
 #################################################
 testcase1:
 testcase1 passed, your program successfully indicated a failure
-  - Valgrind reported errors
-valgrind was not clean
-==1349== Memcheck, a memory error detector
-==1349== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1349== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==1349== 
-==1349== Parent PID: 1348
-==1349== 
-==1349== 
-==1349== HEAP SUMMARY:
-==1349==     in use at exit: 640 bytes in 6 blocks
-==1349==   total heap usage: 14 allocs, 8 frees, 2,296 bytes allocated
-==1349== 
-==1349== 640 (40 direct, 600 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
-==1349==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1349==    by 0x1092C6: read_input (in /graderhome/work/30_sort_lines/sortLines)
-==1349==    by 0x109555: main (in /graderhome/work/30_sort_lines/sortLines)
-==1349== 
-==1349== LEAK SUMMARY:
-==1349==    definitely lost: 40 bytes in 1 blocks
-==1349==    indirectly lost: 600 bytes in 5 blocks
-==1349==      possibly lost: 0 bytes in 0 blocks
-==1349==    still reachable: 0 bytes in 0 blocks
-==1349==         suppressed: 0 bytes in 0 blocks
-==1349== 
-==1349== For lists of detected and suppressed errors, rerun with: -s
-==1349== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
 Your output is correct
@@ -42,6 +17,6 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase4:
-Your output is incorrect
+valgrind reported memory errors
 
-Overall Grade: D
+Overall Grade: C
