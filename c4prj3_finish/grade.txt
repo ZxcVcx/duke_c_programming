@@ -1,4 +1,4 @@
-Grading at Sat 07 Oct 2023 03:54:05 PM UTC
+Grading at Sat 07 Oct 2023 04:05:29 PM UTC
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -35,8 +35,8 @@ Running a simulation with 80000 draws for 4 hands...
     Hand 3 was close enough to our answer
     Test case passed!    
 Running a simulation with 30000 draws for 2 hands...
- ** Hand 0 differed from our answer by 2.60%
- ** Hand 1 differed from our answer by -2.60%
+ ** Hand 0 differed from our answer by 2.81%
+ ** Hand 1 differed from our answer by -2.81%
 *** Test case failed ***
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
@@ -45,8 +45,8 @@ Running a simulation with 30000 draws for 2 hands...
     Test case passed!    
 Running a simulation with 40000 draws for 3 hands...
     Hand 0 was close enough to our answer
- ** Hand 1 differed from our answer by -2.33%
- ** Hand 2 differed from our answer by 3.24%
+ ** Hand 1 differed from our answer by -2.55%
+ ** Hand 2 differed from our answer by 3.69%
 *** Test case failed ***
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
