@@ -1,4 +1,4 @@
-Grading at Sat 07 Oct 2023 04:19:04 PM UTC
+Grading at Sat 07 Oct 2023 04:25:57 PM UTC
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -11,438 +11,51 @@ gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
 gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
-Valgrind reported errors:
-==6949== Memcheck, a memory error detector
-==6949== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6949== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6949== Command: ./poker inp.txt 20000
-==6949== Parent PID: 6948
-==6949== 
-==6949== Invalid read of size 8
-==6949==    at 0x109DD6: shuffle (deck.c:28)
-==6949==    by 0x109413: main (main.c:54)
-==6949==  Address 0x4a4aff8 is 0 bytes after a block of size 376 alloc'd
-==6949==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6949==    by 0x10A0B1: add_card_to (deck.c:44)
-==6949==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6949==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6949==    by 0x109348: main (main.c:44)
-==6949== 
-==6949== Invalid read of size 8
-==6949==    at 0x109DDA: shuffle (deck.c:28)
-==6949==    by 0x109413: main (main.c:54)
-==6949==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6949== 
-==6949== 
-==6949== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6949==  Access not within mapped region at address 0x0
-==6949==    at 0x109DDA: shuffle (deck.c:28)
-==6949==    by 0x109413: main (main.c:54)
-==6949==  If you believe this happened as a result of a stack
-==6949==  overflow in your program's main thread (unlikely but
-==6949==  possible), you can try to increase the size of the
-==6949==  main thread stack using the --main-stacksize= flag.
-==6949==  The main thread stack size used in this run was 8388608.
-==6949== 
-==6949== HEAP SUMMARY:
-==6949==     in use at exit: 1,688 bytes in 76 blocks
-==6949==   total heap usage: 199 allocs, 123 frees, 13,152 bytes allocated
-==6949== 
-==6949== LEAK SUMMARY:
-==6949==    definitely lost: 16 bytes in 1 blocks
-==6949==    indirectly lost: 176 bytes in 8 blocks
-==6949==      possibly lost: 0 bytes in 0 blocks
-==6949==    still reachable: 1,496 bytes in 67 blocks
-==6949==         suppressed: 0 bytes in 0 blocks
-==6949== Rerun with --leak-check=full to see details of leaked memory
-==6949== 
-==6949== For lists of detected and suppressed errors, rerun with: -s
-==6949== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
-Valgrind reported errors:
-==6954== Memcheck, a memory error detector
-==6954== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6954== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6954== Command: ./poker inp.txt 25000
-==6954== Parent PID: 6953
-==6954== 
-==6954== Invalid read of size 8
-==6954==    at 0x109DD6: shuffle (deck.c:28)
-==6954==    by 0x109413: main (main.c:54)
-==6954==  Address 0x4a4bb68 is 0 bytes after a block of size 360 alloc'd
-==6954==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6954==    by 0x10A0B1: add_card_to (deck.c:44)
-==6954==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6954==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6954==    by 0x109348: main (main.c:44)
-==6954== 
-==6954== Invalid read of size 8
-==6954==    at 0x109DDA: shuffle (deck.c:28)
-==6954==    by 0x109413: main (main.c:54)
-==6954==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6954== 
-==6954== 
-==6954== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6954==  Access not within mapped region at address 0x0
-==6954==    at 0x109DDA: shuffle (deck.c:28)
-==6954==    by 0x109413: main (main.c:54)
-==6954==  If you believe this happened as a result of a stack
-==6954==  overflow in your program's main thread (unlikely but
-==6954==  possible), you can try to increase the size of the
-==6954==  main thread stack using the --main-stacksize= flag.
-==6954==  The main thread stack size used in this run was 8388608.
-==6954== 
-==6954== HEAP SUMMARY:
-==6954==     in use at exit: 1,832 bytes in 83 blocks
-==6954==   total heap usage: 206 allocs, 123 frees, 13,224 bytes allocated
-==6954== 
-==6954== LEAK SUMMARY:
-==6954==    definitely lost: 24 bytes in 1 blocks
-==6954==    indirectly lost: 264 bytes in 12 blocks
-==6954==      possibly lost: 0 bytes in 0 blocks
-==6954==    still reachable: 1,544 bytes in 70 blocks
-==6954==         suppressed: 0 bytes in 0 blocks
-==6954== Rerun with --leak-check=full to see details of leaked memory
-==6954== 
-==6954== For lists of detected and suppressed errors, rerun with: -s
-==6954== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
-Valgrind reported errors:
-==6959== Memcheck, a memory error detector
-==6959== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6959== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6959== Command: ./poker inp2.txt 25000
-==6959== Parent PID: 6958
-==6959== 
-==6959== Invalid read of size 8
-==6959==    at 0x109DD6: shuffle (deck.c:28)
-==6959==    by 0x109413: main (main.c:54)
-==6959==  Address 0x4a4bd70 is 0 bytes after a block of size 368 alloc'd
-==6959==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6959==    by 0x10A0B1: add_card_to (deck.c:44)
-==6959==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6959==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6959==    by 0x109348: main (main.c:44)
-==6959== 
-==6959== Invalid read of size 8
-==6959==    at 0x109DDA: shuffle (deck.c:28)
-==6959==    by 0x109413: main (main.c:54)
-==6959==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6959== 
-==6959== 
-==6959== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6959==  Access not within mapped region at address 0x0
-==6959==    at 0x109DDA: shuffle (deck.c:28)
-==6959==    by 0x109413: main (main.c:54)
-==6959==  If you believe this happened as a result of a stack
-==6959==  overflow in your program's main thread (unlikely but
-==6959==  possible), you can try to increase the size of the
-==6959==  main thread stack using the --main-stacksize= flag.
-==6959==  The main thread stack size used in this run was 8388608.
-==6959== 
-==6959== HEAP SUMMARY:
-==6959==     in use at exit: 1,848 bytes in 84 blocks
-==6959==   total heap usage: 208 allocs, 124 frees, 13,600 bytes allocated
-==6959== 
-==6959== LEAK SUMMARY:
-==6959==    definitely lost: 24 bytes in 1 blocks
-==6959==    indirectly lost: 264 bytes in 12 blocks
-==6959==      possibly lost: 0 bytes in 0 blocks
-==6959==    still reachable: 1,560 bytes in 71 blocks
-==6959==         suppressed: 0 bytes in 0 blocks
-==6959== Rerun with --leak-check=full to see details of leaked memory
-==6959== 
-==6959== For lists of detected and suppressed errors, rerun with: -s
-==6959== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 2 hands...
-Valgrind reported errors:
-==6964== Memcheck, a memory error detector
-==6964== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6964== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6964== Command: ./poker inp2.txt 25000
-==6964== Parent PID: 6963
-==6964== 
-==6964== Invalid read of size 8
-==6964==    at 0x109DD6: shuffle (deck.c:28)
-==6964==    by 0x109413: main (main.c:54)
-==6964==  Address 0x4a4aff8 is 0 bytes after a block of size 376 alloc'd
-==6964==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6964==    by 0x10A0B1: add_card_to (deck.c:44)
-==6964==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6964==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6964==    by 0x109348: main (main.c:44)
-==6964== 
-==6964== Invalid read of size 8
-==6964==    at 0x109DDA: shuffle (deck.c:28)
-==6964==    by 0x109413: main (main.c:54)
-==6964==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6964== 
-==6964== 
-==6964== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6964==  Access not within mapped region at address 0x0
-==6964==    at 0x109DDA: shuffle (deck.c:28)
-==6964==    by 0x109413: main (main.c:54)
-==6964==  If you believe this happened as a result of a stack
-==6964==  overflow in your program's main thread (unlikely but
-==6964==  possible), you can try to increase the size of the
-==6964==  main thread stack using the --main-stacksize= flag.
-==6964==  The main thread stack size used in this run was 8388608.
-==6964== 
-==6964== HEAP SUMMARY:
-==6964==     in use at exit: 1,688 bytes in 76 blocks
-==6964==   total heap usage: 199 allocs, 123 frees, 13,152 bytes allocated
-==6964== 
-==6964== LEAK SUMMARY:
-==6964==    definitely lost: 16 bytes in 1 blocks
-==6964==    indirectly lost: 176 bytes in 8 blocks
-==6964==      possibly lost: 0 bytes in 0 blocks
-==6964==    still reachable: 1,496 bytes in 67 blocks
-==6964==         suppressed: 0 bytes in 0 blocks
-==6964== Rerun with --leak-check=full to see details of leaked memory
-==6964== 
-==6964== For lists of detected and suppressed errors, rerun with: -s
-==6964== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 80000 draws for 4 hands...
-Valgrind reported errors:
-==6969== Memcheck, a memory error detector
-==6969== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6969== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6969== Command: ./poker inp3.txt 80000
-==6969== Parent PID: 6968
-==6969== 
-==6969== Invalid read of size 8
-==6969==    at 0x109DD6: shuffle (deck.c:28)
-==6969==    by 0x109413: main (main.c:54)
-==6969==  Address 0x4a4bd30 is 0 bytes after a block of size 320 alloc'd
-==6969==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6969==    by 0x10A0B1: add_card_to (deck.c:44)
-==6969==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6969==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6969==    by 0x109348: main (main.c:44)
-==6969== 
-==6969== Invalid read of size 8
-==6969==    at 0x109DDA: shuffle (deck.c:28)
-==6969==    by 0x109413: main (main.c:54)
-==6969==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6969== 
-==6969== 
-==6969== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6969==  Access not within mapped region at address 0x0
-==6969==    at 0x109DDA: shuffle (deck.c:28)
-==6969==    by 0x109413: main (main.c:54)
-==6969==  If you believe this happened as a result of a stack
-==6969==  overflow in your program's main thread (unlikely but
-==6969==  possible), you can try to increase the size of the
-==6969==  main thread stack using the --main-stacksize= flag.
-==6969==  The main thread stack size used in this run was 8388608.
-==6969== 
-==6969== HEAP SUMMARY:
-==6969==     in use at exit: 1,784 bytes in 84 blocks
-==6969==   total heap usage: 232 allocs, 148 frees, 13,424 bytes allocated
-==6969== 
-==6969== LEAK SUMMARY:
-==6969==    definitely lost: 32 bytes in 1 blocks
-==6969==    indirectly lost: 448 bytes in 28 blocks
-==6969==      possibly lost: 0 bytes in 0 blocks
-==6969==    still reachable: 1,304 bytes in 55 blocks
-==6969==         suppressed: 0 bytes in 0 blocks
-==6969== Rerun with --leak-check=full to see details of leaked memory
-==6969== 
-==6969== For lists of detected and suppressed errors, rerun with: -s
-==6969== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Hand 3 was close enough to our answer
+    Test case passed!    
 Running a simulation with 30000 draws for 2 hands...
-Valgrind reported errors:
-==6974== Memcheck, a memory error detector
-==6974== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6974== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6974== Command: ./poker inp.txt 30000
-==6974== Parent PID: 6973
-==6974== 
-==6974== Invalid read of size 8
-==6974==    at 0x109DD6: shuffle (deck.c:28)
-==6974==    by 0x109413: main (main.c:54)
-==6974==  Address 0x4a4a690 is 0 bytes after a block of size 352 alloc'd
-==6974==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6974==    by 0x10A0B1: add_card_to (deck.c:44)
-==6974==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6974==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6974==    by 0x109348: main (main.c:44)
-==6974== 
-==6974== Invalid read of size 8
-==6974==    at 0x109DDA: shuffle (deck.c:28)
-==6974==    by 0x109413: main (main.c:54)
-==6974==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6974== 
-==6974== 
-==6974== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6974==  Access not within mapped region at address 0x0
-==6974==    at 0x109DDA: shuffle (deck.c:28)
-==6974==    by 0x109413: main (main.c:54)
-==6974==  If you believe this happened as a result of a stack
-==6974==  overflow in your program's main thread (unlikely but
-==6974==  possible), you can try to increase the size of the
-==6974==  main thread stack using the --main-stacksize= flag.
-==6974==  The main thread stack size used in this run was 8388608.
-==6974== 
-==6974== HEAP SUMMARY:
-==6974==     in use at exit: 1,544 bytes in 70 blocks
-==6974==   total heap usage: 176 allocs, 106 frees, 11,536 bytes allocated
-==6974== 
-==6974== LEAK SUMMARY:
-==6974==    definitely lost: 16 bytes in 1 blocks
-==6974==    indirectly lost: 224 bytes in 14 blocks
-==6974==      possibly lost: 0 bytes in 0 blocks
-==6974==    still reachable: 1,304 bytes in 55 blocks
-==6974==         suppressed: 0 bytes in 0 blocks
-==6974== Rerun with --leak-check=full to see details of leaked memory
-==6974== 
-==6974== For lists of detected and suppressed errors, rerun with: -s
-==6974== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 1.83%
+ ** Hand 1 differed from our answer by -1.83%
+*** Test case failed ***
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
-Valgrind reported errors:
-==6979== Memcheck, a memory error detector
-==6979== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6979== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6979== Command: ./poker inp.txt 30000
-==6979== Parent PID: 6978
-==6979== 
-==6979== Invalid read of size 8
-==6979==    at 0x109DD6: shuffle (deck.c:28)
-==6979==    by 0x109413: main (main.c:54)
-==6979==  Address 0x4a4af60 is 0 bytes after a block of size 368 alloc'd
-==6979==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6979==    by 0x10A0B1: add_card_to (deck.c:44)
-==6979==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6979==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6979==    by 0x109348: main (main.c:44)
-==6979== 
-==6979== Invalid read of size 8
-==6979==    at 0x109DDA: shuffle (deck.c:28)
-==6979==    by 0x109413: main (main.c:54)
-==6979==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6979== 
-==6979== 
-==6979== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6979==  Access not within mapped region at address 0x0
-==6979==    at 0x109DDA: shuffle (deck.c:28)
-==6979==    by 0x109413: main (main.c:54)
-==6979==  If you believe this happened as a result of a stack
-==6979==  overflow in your program's main thread (unlikely but
-==6979==  possible), you can try to increase the size of the
-==6979==  main thread stack using the --main-stacksize= flag.
-==6979==  The main thread stack size used in this run was 8388608.
-==6979== 
-==6979== HEAP SUMMARY:
-==6979==     in use at exit: 1,704 bytes in 78 blocks
-==6979==   total heap usage: 174 allocs, 96 frees, 12,376 bytes allocated
-==6979== 
-==6979== LEAK SUMMARY:
-==6979==    definitely lost: 16 bytes in 1 blocks
-==6979==    indirectly lost: 192 bytes in 10 blocks
-==6979==      possibly lost: 0 bytes in 0 blocks
-==6979==    still reachable: 1,496 bytes in 67 blocks
-==6979==         suppressed: 0 bytes in 0 blocks
-==6979== Rerun with --leak-check=full to see details of leaked memory
-==6979== 
-==6979== For lists of detected and suppressed errors, rerun with: -s
-==6979== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 40000 draws for 3 hands...
-Valgrind reported errors:
-==6984== Memcheck, a memory error detector
-==6984== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6984== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6984== Command: ./poker inp2.txt 40000
-==6984== Parent PID: 6983
-==6984== 
-==6984== Invalid read of size 8
-==6984==    at 0x109DD6: shuffle (deck.c:28)
-==6984==    by 0x109413: main (main.c:54)
-==6984==  Address 0x4a4b0a8 is 0 bytes after a block of size 312 alloc'd
-==6984==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6984==    by 0x10A0B1: add_card_to (deck.c:44)
-==6984==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6984==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6984==    by 0x109348: main (main.c:44)
-==6984== 
-==6984== Invalid read of size 8
-==6984==    at 0x109DDA: shuffle (deck.c:28)
-==6984==    by 0x109413: main (main.c:54)
-==6984==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6984== 
-==6984== 
-==6984== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6984==  Access not within mapped region at address 0x0
-==6984==    at 0x109DDA: shuffle (deck.c:28)
-==6984==    by 0x109413: main (main.c:54)
-==6984==  If you believe this happened as a result of a stack
-==6984==  overflow in your program's main thread (unlikely but
-==6984==  possible), you can try to increase the size of the
-==6984==  main thread stack using the --main-stacksize= flag.
-==6984==  The main thread stack size used in this run was 8388608.
-==6984== 
-==6984== HEAP SUMMARY:
-==6984==     in use at exit: 1,752 bytes in 81 blocks
-==6984==   total heap usage: 204 allocs, 123 frees, 11,784 bytes allocated
-==6984== 
-==6984== LEAK SUMMARY:
-==6984==    definitely lost: 24 bytes in 1 blocks
-==6984==    indirectly lost: 312 bytes in 18 blocks
-==6984==      possibly lost: 0 bytes in 0 blocks
-==6984==    still reachable: 1,416 bytes in 62 blocks
-==6984==         suppressed: 0 bytes in 0 blocks
-==6984== Rerun with --leak-check=full to see details of leaked memory
-==6984== 
-==6984== For lists of detected and suppressed errors, rerun with: -s
-==6984== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+ ** Hand 1 differed from our answer by -2.04%
+ ** Hand 2 differed from our answer by 3.08%
+*** Test case failed ***
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
-Valgrind reported errors:
-==6989== Memcheck, a memory error detector
-==6989== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6989== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==6989== Command: ./poker whacky.txt 100000
-==6989== Parent PID: 6988
-==6989== 
-==6989== Invalid read of size 8
-==6989==    at 0x109DD6: shuffle (deck.c:28)
-==6989==    by 0x109413: main (main.c:54)
-==6989==  Address 0x4a4d7d0 is 0 bytes after a block of size 256 alloc'd
-==6989==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6989==    by 0x10A0B1: add_card_to (deck.c:44)
-==6989==    by 0x10A0B1: make_deck_exclude (deck.c:66)
-==6989==    by 0x10A213: build_remaining_deck (deck.c:89)
-==6989==    by 0x109348: main (main.c:44)
-==6989== 
-==6989== Invalid read of size 8
-==6989==    at 0x109DDA: shuffle (deck.c:28)
-==6989==    by 0x109413: main (main.c:54)
-==6989==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==6989== 
-==6989== 
-==6989== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6989==  Access not within mapped region at address 0x0
-==6989==    at 0x109DDA: shuffle (deck.c:28)
-==6989==    by 0x109413: main (main.c:54)
-==6989==  If you believe this happened as a result of a stack
-==6989==  overflow in your program's main thread (unlikely but
-==6989==  possible), you can try to increase the size of the
-==6989==  main thread stack using the --main-stacksize= flag.
-==6989==  The main thread stack size used in this run was 8388608.
-==6989== 
-==6989== HEAP SUMMARY:
-==6989==     in use at exit: 2,072 bytes in 98 blocks
-==6989==   total heap usage: 274 allocs, 176 frees, 15,760 bytes allocated
-==6989== 
-==6989== LEAK SUMMARY:
-==6989==    definitely lost: 48 bytes in 1 blocks
-==6989==    indirectly lost: 624 bytes in 36 blocks
-==6989==      possibly lost: 0 bytes in 0 blocks
-==6989==    still reachable: 1,400 bytes in 61 blocks
-==6989==         suppressed: 0 bytes in 0 blocks
-==6989== Rerun with --leak-check=full to see details of leaked memory
-==6989== 
-==6989== For lists of detected and suppressed errors, rerun with: -s
-==6989== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Hand 3 was close enough to our answer
+    Hand 4 was close enough to our answer
+    Hand 5 was close enough to our answer
+    Test case passed!    
 
-Overall Grade: F
+Overall Grade: C
