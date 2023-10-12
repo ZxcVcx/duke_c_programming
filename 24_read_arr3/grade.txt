@@ -1,10 +1,5 @@
-Grading at Sun 24 Sep 2023 01:06:52 AM UTC
-I expected to find a file called 'answer.txt' but it did not exist
-(or was not a regular file)
-Here are the files that I can find:
-answers.txt
-README
-test.c
-Your output did not match what we expected.
+Grading at Sun 24 Sep 2023 01:08:45 AM UTC
+Your file matched the expected output
+Your output matched what we expected
 
-Overall Grade: F
+Overall Grade: A
