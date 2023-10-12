@@ -1,14 +1,18 @@
-Grading at Fri 15 Sep 2023 02:28:32 AM UTC
+Grading at Wed 04 Oct 2023 07:00:26 AM UTC
 Compiling deck.c
-Compiling cards.c
-Linking cards.o deck.o deck-c4.o and the grader's .o file
-Checking the output of all the functions other than shuffle
-Your file matched the expected output
- - Those functions seem to work!
-Checking your shuffle results with a 6 card hand...
-  Least common hand: 0.131300%
-  Most  common hand: 0.147350%
-  Perfectly even is: 0.138888%
- Excellent!
+deck.c: In function ‘add_card_to’:
+deck.c:51:34: error: incompatible types when assigning to type ‘card_t *’ {aka ‘struct card_tag *’} from type ‘card_t’ {aka ‘struct card_tag’}
+   51 |   deck->cards[deck->n_cards++] = c;
+      |                                  ^
+deck.c: At top level:
+deck.c:56:2: error: ISO C does not allow extra ‘;’ outside of a function [-Werror=pedantic]
+   56 | };
+      |  ^
+deck.c: In function ‘add_empty_card’:
+deck.c:56:1: error: control reaches end of non-void function [-Werror=return-type]
+   56 | };
+      | ^
+cc1: all warnings being treated as errors
+Could not compile your deck.c!
 
-Overall Grade: A
+Overall Grade: FAILED
