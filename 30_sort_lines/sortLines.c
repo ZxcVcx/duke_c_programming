@@ -6,7 +6,7 @@ void read_input(char *** input, size_t * n, FILE * f) {
   size_t sz = 0;
   char * line = NULL;
   while (getline(&line, &sz, f) >= 0) {
-    *input = realloc(*input, (*n+1) * sizeof(**input));
+    *input = realloc(*input, (*n+1) * sizeof(*input));
     (*input)[*n] = line;
     line = NULL;
     (*n)++;
