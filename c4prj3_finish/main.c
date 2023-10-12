@@ -55,17 +55,23 @@ int main(int argc, char ** argv) {
     future_cards_from_deck(remaining, fc);
 
     size_t maxidx = 0;
-    int tie = 1;
     for (size_t j = 0; j < n_hands; j++) {
       int result = compare_hands(hands[maxidx], hands[j]);
       if (result < 0) {
         maxidx = j;
       }
-      if (result != 0) {
-        tie = 0;
+    }
+
+    size_t secidx = (maxidx == 0) ? 1 : 0;
+    for (size_t j = 0; j < n_hands; j++) {
+      if (j == maxidx) continue;
+      int result = compare_hands(hands[secidx], hands[j]);
+      if (result < 0) {
+	secidx = j;
       }
     }
-    if (tie == 1) {
+    
+    if (compare_hands(hands[maxidx], hands[secidx]) == 0) {
       wins[n_hands]++;
     } else {
       wins[maxidx]++;
