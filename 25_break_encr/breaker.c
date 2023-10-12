@@ -18,13 +18,7 @@ int encptkey(FILE * f) {
       max = i;
     }
   }
-  if (max + 'a' == 'e') {
-    return 0;
-  }
-  if (max < 'e' - 'a') {
-    return 'z' - 'e' + max + 1;
-  }
-  return max + 'a' - 'e';
+  return ('z'-'e'+1 + max) % 26;
 }
 
 int main(int argc, char ** argv) {
