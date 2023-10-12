@@ -42,7 +42,7 @@ void addCount(counts_t * c, const char * name) {
     c->counts[ctn]->count++;
   } else {
     c->size++;
-    c->counts = realloc(c->counts, sizeof(c->counts)*(c->size));
+    c->counts = realloc(c->counts, sizeof(*c->counts)*(c->size));
     c->counts[c->size-1] = createCount(name);
   }
 }
