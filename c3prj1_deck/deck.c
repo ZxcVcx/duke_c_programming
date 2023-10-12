@@ -69,7 +69,7 @@ deck_t * make_deck_exclude(deck_t * exclude_cards) {
 }
 
 void free_deck(deck_t * deck) {
-  for (int i = 0; i < deck_n_cards; i++) {
+  for (int i = 0; i < deck->n_cards; i++) {
     free(deck->cards[i]);
   }
   free(deck->cards);
