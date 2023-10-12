@@ -47,7 +47,7 @@ void add_card_to(deck_t * deck, card_t c) {
 
 card_t * add_empty_card(deck_t * deck) {
   deck->cards = realloc(deck->cards, sizeof(*deck->cards)*(deck->n_cards+1));
-  catd_t empty_card;
+  card_t empty_card;
   empty_card->value=0;
   empty_card->suit=0;
   *deck->cards[deck->n_cards++] = empty_card;
@@ -74,7 +74,7 @@ void free_deck(deck_t * deck) {
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
   deck_t * exclude = malloc(sizeof(*exclude));
   exclude->cards = NULL;
-  deck->n_cards = 0;
+  exclude->n_cards = 0;
   for (size_t i = 0; i < n_hands; i++) {
     for (size_t j = 0; j < hands[i]->n_cards; j++) {
       add_card_to(exclude, *hands[i]->cards[j]);
