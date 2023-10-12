@@ -12,7 +12,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   while (ptr[0] != '\n' && ptr[0] != '\0') {
     if (ptr[0] == '?') {
       card_t * c = add_empty_card(deck);
-      add_future_card(fc, ptr[1], c);
+      add_future_card(fc, ptr[1]-'0', c);
     } else {
       card_t c = card_from_letters(ptr[0], ptr[1]);
       assert_card_valid(c);
