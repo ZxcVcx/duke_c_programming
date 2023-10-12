@@ -43,3 +43,18 @@ void assert_full_deck(deck_t * d) {
     }
   }
 }
+
+deck_t * make_deck_exclude(deck_t * excluded_cards);
+
+void add_card_to(deck_t * deck, card_t c) {
+  deck->cards = realloc(deck->cards, sizeof(deck->cards) + sizeof(c));
+  deck->cards[deck->n_cards++] = c;
+}
+
+card_t * add_empty_card(deck_t * deck) {
+  deck->cards = realloc(deck->cards, sizeof(deck->cards) + sizeof(*deck->cards));
+};
+
+void free_deck(deck_t * deck);
+
+deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands);
