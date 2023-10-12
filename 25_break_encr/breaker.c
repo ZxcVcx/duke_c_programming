@@ -7,6 +7,7 @@ int encptkey(FILE * f) {
   int c = 0;
   while ((c = fgetc(f)) != EOF) {
     if (isalpha(c)) {
+      c = tolower(c);
       counts[c-'a']++;
     }
   }
