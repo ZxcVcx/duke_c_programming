@@ -1,13 +1,8 @@
-Grading at Sat 07 Oct 2023 01:23:30 PM UTC
+Grading at Sat 07 Oct 2023 01:24:06 PM UTC
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:30:7: error: ‘desk’ undeclared (first use in this function); did you mean ‘deck’?
-   30 |   if (desk->n_cards < 5) {
-      |       ^~~~
-      |       deck
-input.c:30:7: note: each undeclared identifier is reported only once for each function it appears in
 input.c:11:10: error: unused variable ‘count’ [-Werror=unused-variable]
    11 |   size_t count = 0;
       |          ^~~~~
