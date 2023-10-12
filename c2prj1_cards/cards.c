@@ -61,7 +61,7 @@ char value_letter(card_t c) {
   case VALUE_JACK:
     return 'J';
   }
-  return 'x';
+  return '?';
 }
 
 
@@ -76,9 +76,9 @@ char suit_letter(card_t c) {
   case CLUBS:
     return 'c';
   case NUM_SUITS:
-    return ' ';
+    return '?';
   }
-  return 'x';
+  return '?';
   
 }
 
