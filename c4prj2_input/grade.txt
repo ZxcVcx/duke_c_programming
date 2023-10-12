@@ -1,12 +1,12 @@
-Grading at Sat 07 Oct 2023 11:55:32 AM UTC
+Grading at Sat 07 Oct 2023 11:56:51 AM UTC
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘read_input’:
-input.c:38:9: error: ‘current’ undeclared (first use in this function)
-   38 |     if (current == NULL) {
-      |         ^~~~~~~
-input.c:38:9: note: each undeclared identifier is reported only once for each function it appears in
+input.c:46:25: error: ‘current’ undeclared (first use in this function)
+   46 |     deck_ts[*n_hands] = current;
+      |                         ^~~~~~~
+input.c:46:25: note: each undeclared identifier is reported only once for each function it appears in
 Compilation of input.c failed
 
 Overall Grade: F
