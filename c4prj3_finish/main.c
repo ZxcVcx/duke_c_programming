@@ -56,7 +56,7 @@ int main(int argc, char ** argv) {
 
     int inc_array_at = 0;
     int index = 0;
-    for (int j = 0; j < n_hands; j++) {
+    for (int j = 1; j < n_hands; j++) {
       int result = compare_hands(hands[index], hands[j]);
       if (result == 0) inc_array_at = n_hands;
       if (result < 0) {
