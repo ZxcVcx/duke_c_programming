@@ -1,16 +1,28 @@
-Grading at Wed 04 Oct 2023 07:00:26 AM UTC
+Grading at Wed 04 Oct 2023 07:59:10 AM UTC
 Compiling deck.c
-deck.c: In function ‘add_card_to’:
-deck.c:51:34: error: incompatible types when assigning to type ‘card_t *’ {aka ‘struct card_tag *’} from type ‘card_t’ {aka ‘struct card_tag’}
-   51 |   deck->cards[deck->n_cards++] = c;
-      |                                  ^
-deck.c: At top level:
-deck.c:56:2: error: ISO C does not allow extra ‘;’ outside of a function [-Werror=pedantic]
-   56 | };
-      |  ^
 deck.c: In function ‘add_empty_card’:
-deck.c:56:1: error: control reaches end of non-void function [-Werror=return-type]
-   56 | };
+deck.c:50:3: error: unknown type name ‘catd_t’; did you mean ‘card_t’?
+   50 |   catd_t empty_card;
+      |   ^~~~~~
+      |   card_t
+deck.c:51:13: error: invalid type argument of ‘->’ (have ‘int’)
+   51 |   empty_card->value=0;
+      |             ^~
+deck.c:52:13: error: invalid type argument of ‘->’ (have ‘int’)
+   52 |   empty_card->suit=0;
+      |             ^~
+deck.c:53:35: error: incompatible types when assigning to type ‘card_t’ {aka ‘struct card_tag’} from type ‘int’
+   53 |   *deck->cards[deck->n_cards++] = empty_card;
+      |                                   ^~~~~~~~~~
+deck.c: In function ‘build_remaining_deck’:
+deck.c:77:3: error: ‘deck’ undeclared (first use in this function); did you mean ‘deck_t’?
+   77 |   deck->n_cards = 0;
+      |   ^~~~
+      |   deck_t
+deck.c:77:3: note: each undeclared identifier is reported only once for each function it appears in
+deck.c: In function ‘make_deck_exclude’:
+deck.c:67:1: error: control reaches end of non-void function [-Werror=return-type]
+   67 | }
       | ^
 cc1: all warnings being treated as errors
 Could not compile your deck.c!
