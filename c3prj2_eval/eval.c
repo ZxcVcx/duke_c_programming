@@ -96,12 +96,8 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs) {
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 
   if (index+4 >= hand->n_cards) return 0;
-  if (is_ace_low_straight_at(hand, index, fs)) {
-    return -1;
-  }
-  if (is_n_length_straight_at(hand, index, fs, 5)) {
-    return 1;
-  }
+  if (is_ace_low_straight_at(hand, index, fs)) return -1;
+  if (is_n_length_straight_at(hand, index, fs, 5)) return 1;
   return 0;
 }
 
@@ -165,7 +161,23 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //implementation in eval-c4.o) so that the
 //other functions we have provided can make
 //use of get_match_counts.
-unsigned * get_match_counts(deck_t * hand) ;
+unsigned * get_match_counts(deck_t * hand) {
+  unsigned * match_counts = malloc(hand->n_cards*(sizeof(*match_counts)));
+  match_counts = {0};
+  int i = 0;
+  int j = 0;
+  while(j < hand->n_cards) {
+    if (hand->cards[i]->value == hand->cards[j]->value) {
+      j++;
+      for (int k = i; k < j; k++) {
+	match_count[k]++;
+      }
+    } else {
+      i = j;
+    }
+  }
+  return match_counts;
+}
 
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
