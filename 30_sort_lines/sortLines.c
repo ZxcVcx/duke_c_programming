@@ -53,14 +53,8 @@ void sort_lines_and_print(FILE * f) {
 int main(int argc, char ** argv) {
   
   //WRITE YOUR CODE HERE!
-  /* char ** input = NULL; */
-  /* size_t count = 0; */
   if (argc == 1) {
     sort_lines_and_print(stdin);
-    /* read_input(&input, &count, stdin); */
-    /* sortData(input, count); */
-    /* print_data(input, count); */
-    /* free_input(input, count); */
   };
   if (argc > 1) {
     for (int i = 1; i < argc; i++) {
@@ -70,18 +64,11 @@ int main(int argc, char ** argv) {
 	return EXIT_FAILURE;
       }
       sort_lines_and_print(f);
-      /* read_input(&input, &count, f); */
-      /* sortData(input, count); */
-      /* print_data(input, count); */
-      /* free_input(input, count); */
-      /* input = NULL; */
-      /* count = 0; */
       if (fclose(f) == EOF) {
 	fprintf(stderr, "Failed to close the file %s.\n", argv[i]);
 	return EXIT_FAILURE;
       }
     }
   }
-  
   return EXIT_SUCCESS;
 }
