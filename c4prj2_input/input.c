@@ -6,9 +6,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = NULL;
   deck->n_cards = 0;
-  char * ptr = NULL;
+  const char * ptr = str;
   size_t count = 0;
-  while (*ptr != '\n' && *ptr != '\0') {
+  while (ptr[0] != '\n' && ptr[0] != '\0') {
     if (ptr[0] == '?') {
       card_t * c = add_empty_card(deck);
       add_future_card(fc, count, c);
